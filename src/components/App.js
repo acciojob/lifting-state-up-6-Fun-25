@@ -21,7 +21,7 @@ const App = () => {
     <div>
       <h1>Parent Component</h1>
       <div>
-        <h2>Child Component</h2>
+       
         <Child todoList={todos} onComplete={handleComplete} />
       </div>
     </div>
@@ -32,6 +32,7 @@ const Child = ({ todoList, onComplete }) => {
   return (
     <div className="child">
       <ul>
+        <h2>Child Component</h2>
         {todoList.map((todo) => (
           <div className="child-item" key={todo.id}>
             <li>{todo.text}</li>
