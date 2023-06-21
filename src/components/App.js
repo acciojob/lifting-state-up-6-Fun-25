@@ -21,28 +21,25 @@ const App = () => {
     <div>
       <h1>Parent Component</h1>
       <div>
-       
-        <Child todoList={todos} onComplete={handleComplete} />
+        <TodoList todos={todos} handleComplete={handleComplete}/>
       </div>
     </div>
   );
 };
 
-const Child = ({ todoList, onComplete }) => {
+function TodoList({ todos, handleComplete }) {
   return (
-    <div className="child">
-      <ul>
-        <h2>Child Component</h2>
-        {todoList.map((todo) => (
-          <div className="child-item" key={todo.id}>
-            <li>{todo.text}</li>
-            {!todo.completed && (
-              <button onClick={() => onComplete(todo.id)}>Complete</button>
-            )}
-          </div>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      <h2>Child Component</h2>
+      {todos.map((todo) => (
+        <li key={todo.id}>
+          {todo.text}
+          {!todo.completed && (
+            <button onClick={() => handleComplete(todo.id)}>Complete</button>
+          )}
+        </li>
+      ))}
+    </ul>
   );
-};
+}
 export default App
