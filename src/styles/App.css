@@ -2,3 +2,6 @@
 h2 {
   margin-left: 40px;
 }
+li>button{
+    padding: 2px;
+}
